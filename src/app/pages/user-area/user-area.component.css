@@ -1,0 +1,13 @@
+.container {
+    min-height: 100%;
+}
+#icon-user{
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 30px auto;
+    border-radius: 50%;
+    fill: #222326;
+    position: relative;
+    top: 4px;
+}

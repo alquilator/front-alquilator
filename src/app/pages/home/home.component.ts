@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductService } from 'src/app/shared/services/product.service';
 
 @Component({
   selector: 'app-home',
@@ -7,21 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   
-  categories = [
-    {name: "Deportes", img: "../../../assets/barbell.svg"}, 
-    {name: "Mobiliario", img: "../../../assets/home-flat.svg"}, 
-    {name: "Ocio", img: "../../../assets/bullseye-flat.svg"}, 
-    {name: "Informática y Móviles", img: "../../../assets/imac-flat.svg"},
-    {name: "Fotografía y Vídeo", img: "../../../assets/camera-flat.svg"},
-    {name: "Música e Instumentos", img: "../../../assets/guitar.svg"},
-    {name: "Sonido", img: "../../../assets/sound-on-flat.svg"},
-    {name: "Herramientas", img: "../../../assets/wrench-flat.svg" }
-  
-  ]
+  categories = [];
 
-  constructor() { }
+  constructor( private router: Router,
+               private productService: ProductService ) { }
 
   ngOnInit(): void {
+    this.categories = this.productService.categories;
+    // console.log(this.categories);
+    
+
+  }
+  categoryRedirect(catName: string){
+    this.router.navigateByUrl(`/category/${catName}`)
   }
 
 }

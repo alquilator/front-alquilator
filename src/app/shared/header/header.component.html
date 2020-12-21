@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">
-        <img src="../../../assets/favicon.ico" width="35" height="35" class="d-inline-block align-top rounded mr-2" alt="">
+    <a class="navbar-brand" routerLink="/home">
+        <img src="../../../assets/favicon.png" width="35" height="35" class="d-inline-block align-top rounded mr-2" alt="">
         Alquilator
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,30 +8,30 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link active" routerLink="/home">Inicio <span class="sr-only">(current)</span></a>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Categorías
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Deportes</a>
-              <a class="dropdown-item" href="#">Mobiliario</a>
-              <a class="dropdown-item" href="#">Ocio</a>
-              <a class="dropdown-item" href="#">Informática y Móviles</a>
-              <a class="dropdown-item" href="#">Fotografía y Vídeo</a>
-              <a class="dropdown-item" href="#">Música e Instrumentos</a>
-              <a class="dropdown-item" href="#">Sonido</a>
-              <a class="dropdown-item" href="#">Herramientas</a>
+              <a class="dropdown-item" routerLink="/category/Deportes">Deportes</a>
+              <a class="dropdown-item" routerLink="/category/Mobiliario">Mobiliario</a>
+              <a class="dropdown-item" routerLink="/category/Ocio">Ocio</a>
+              <a class="dropdown-item" routerLink="/category/Informática">Informática</a>
+              <a class="dropdown-item" routerLink="/category/Fotografía">Fotografía</a>
+              <a class="dropdown-item" routerLink="/category/Instrumentos">Instrumentos</a>
+              <a class="dropdown-item" routerLink="/category/Sonido">Sonido</a>
+              <a class="dropdown-item" routerLink="/category/Herramientas">Herramientas</a>
             </div>
         </li>        
       </div>
 
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-item nav-link active" href="#">Publica tu anuncio</a>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-item nav-link active" routerLink="/login">Inicia sesión</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-item nav-link active" href="#">Inicia sesión</a>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-item nav-link active" routerLink="/registration">Regístrate</a>
             </li>
         </ul>
 

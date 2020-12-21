@@ -1,0 +1,59 @@
+<div class="container d-flex m-auto ">
+  <app-user-area></app-user-area>
+  <div class="mt-5 pt-5" style="width: 50vw;">
+      <h1>General</h1>
+  
+      <!-- Perfil de Usuario -->
+      <article class="mt-5">
+          <h3>Tu perfil</h3>
+          <table class="table">
+              <tbody>
+                <tr>
+                  <th scope="row">Nombre</th>
+                  <td>{{this.user.firstName}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Apellido</th>
+                  <td>{{this.user.lastName}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Correo electrónico</th>
+                  <td>{{this.user.email}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Provincia</th>
+                  <td>{{this.user.city}}</td>
+                </tr>
+              </tbody>
+          </table>
+      </article>
+  
+      <!-- Tus productos -->
+      <article>
+          <h3 class="mt-5">Tus productos</h3>
+          <div class="row mt-4 g-1 px-4">
+            <div class="card-deck">
+              <div *ngFor="let product of this.userProducts" class="card">
+                <img [src]="product.pictures1" class="card-img-top" alt="...">
+                <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">{{product.name}}</h5>
+  
+                      <div class="info-product">
+                        <p class="card-text">Descripción: {{product.description}}</p>
+                        <p class="card-text">Ubicación: Madrid</p>
+                        <p class="card-text price">Precio: {{product.price}}€/día</p>
+                      </div>
+                </div>
+              </div>
+            </div>
+          </div>          
+      </article>
+  
+      <!-- Cerrar cesión -->
+      <article class="mt-5 mb-5">
+          <h3>Cerrar sesión</h3>
+          <p>Cierra sesión de tus cuentas abiertas</p>
+          <button type="button" class="btn btn-block btn-outline-secondary mt-3" (click)="logout()">Cerrar sesión</button>
+      </article>
+  </div>
+</div>

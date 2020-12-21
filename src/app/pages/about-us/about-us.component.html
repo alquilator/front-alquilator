@@ -1,0 +1,38 @@
+
+
+<div class="container mt-5 pt-5">
+    <h1 class="mt-5">Sobre Alquilator</h1>
+ 
+    <p class="mt-5 mb-5">
+        Alquilator nace de la idea de reutilizar todos aquellos productos que tenemos por casa. Esas cosas a las que tenemos cariño y de las que no queremos desprendernos pero a las que, a su vez, podemos sacar algo más de partido. 
+        <br>
+        Mira bien todo lo que tienes a mano y seguro que encontrarás muchas cosas que pubilcar y así aportar un plus a tu economía.
+        
+    </p>
+
+    <h5>Estamos en:</h5>
+    <p>
+        Plaza de San Vicente 5<br>
+        05001 Ávila<br>
+        Email: <a href="mailto:alquilator@alquilator.com"> alquilator@alquilator.com</a><br>
+        Teléfono: 667776667
+    </p>
+
+    <div class="mt-5 mb-5">
+        <google-map 
+            width="750px"
+            height="450px"
+            [center]="center"
+            [zoom]="zoom"
+        >
+            <map-marker
+            *ngFor="let marker of markers"
+            [position]="marker.position"
+            [label]="marker.label"
+            [title]="marker.title"
+            >
+            </map-marker>
+        </google-map>
+    </div>
+
+</div>

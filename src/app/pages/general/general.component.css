@@ -1,0 +1,17 @@
+.card-deck {
+    margin: 2vw;
+}
+
+.card {
+    min-width: 17vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    max-width: 20vw;
+
+}
+
+.card-img-top {
+    min-height: 20vw;
+    min-width: 17vw;
+
+}

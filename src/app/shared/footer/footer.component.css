@@ -29,7 +29,6 @@
 }
 .site-footer a:hover
 {
-  color:#3366cc;
   text-decoration:none;
 }
 .footer-links
@@ -160,4 +159,9 @@
     margin-right:0;
     font-weight:600
   }
+}
+
+
+.nav-item :hover {
+  color: #5bc0de
 }

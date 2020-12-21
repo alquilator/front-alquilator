@@ -1,32 +1,21 @@
-<app-header></app-header>
 
 <div class="container mt-5 pt-5">
     <div>
-       <!-- ¿Ponemos una foto o color diferente? -->
-
         <h1 class="mt-5">Alquilator: no lo vendas, alquílalo</h1>
         <h4 class="mt-3">Porque nunca sabes cuándo volverás a necesitarlo...</h4>
 
-        <div class="d-flex justify-content-center px-5 mt-5">    
+        <!-- <div class="d-flex justify-content-center px-5 mt-5">    
             <div class="search"> <input type="text" class="search-input" placeholder="¿Qué necesitas hoy?..." name=""> <a href="#" class="search-icon"> <img src="../../../assets/search-var-flat.svg" width="40" height="40" alt=""> </a> </div>
-        </div>
+        </div> -->
     </div>
 
     <div>
-        <!-- ¿Ponemos un color de fondo diferente? -->
-        <div class="row mt-4 g-1 px-4 mb-5">
-            <div class="col-md-4 mb-3 mt-3"  *ngFor="let category of categories; let i = index">
-                <div class="card-inner p-3 d-flex flex-column align-items-center"> <img [src]="categories[i].img" width="50">
-                    <div class="text-center mg-text"> <span class="mg-text">{{categories[i].name}}</span> </div>
+        <div class="row mt-4 g-1 px-4 mb-5 justify-content-center">
+            <div class="col-md-4 mb-3 mt-3"  *ngFor="let category of this.categories" (click)="categoryRedirect(category.name)">
+                <div class="card-inner p-3 d-flex flex-column align-items-center"> <img [src]="category.img" width="50">
+                    <div class="text-center mg-text"> <span class="mg-text">{{category.name}}</span> </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div>
-    <!-- ¿Metemos otro botón con Publica tu Anuncio?-->
-    </div>
 </div>
-
-
-<app-footer></app-footer>

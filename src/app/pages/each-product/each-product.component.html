@@ -1,0 +1,33 @@
+<div class="container mt-5 pt-5">
+        <section class="panel mt-5 mb-5">
+            <div *ngFor="let item of this.product" class="panel-body d-flex">
+                <div class="col-md-6">
+                    <div class="pro-img-details">
+                        <img [src]="item.pictures1" alt="">
+                    </div>
+                    <div class="pro-img-list">
+                        <a [href]="item.pictures2">
+                            <img class="img-list" [src]="item.pictures2" alt="">
+                        </a>
+                        <a [href]="item.pictures3">
+                            <img class="img-list" [src]="item.pictures3" alt="">
+                        </a>
+                       
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex flex-column mt-5">
+                    <h1 class="pro-d-title text-info">
+                            {{item.name}}
+                    </h1>
+                        <p>
+                            <strong>Descripción:</strong> {{item.description}}
+                        </p>
+                        <div class="product_meta">
+                            <span class="posted_in"> <strong>Categoría:</strong> {{item.category}} </span>
+                        </div>
+                        <div class="m-bot15"> <strong>Precio/día: </strong> {{item.price}} € </div>
+                    <button routerLink="/booking" class="mt-auto align-self-end btn btn-block btn-round btn-info" type="button">Contactar</button>
+                </div>
+            </div>
+        </section>
+</div>

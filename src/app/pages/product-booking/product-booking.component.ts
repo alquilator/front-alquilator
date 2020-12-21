@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import swal from "sweetalert";
 
 @Component({
   selector: 'app-product-booking',
@@ -11,9 +12,8 @@ export class ProductBookingComponent implements OnInit {
 
   bookingForm: FormGroup;
 
-  constructor (private bookingFb: FormBuilder,
-              // private formDataTransferService: FormDataTransferService,
-              private router: Router) { 
+  constructor ( private bookingFb: FormBuilder,
+                private router: Router) { 
     this.createBookingForm();
   }
 
@@ -47,10 +47,11 @@ export class ProductBookingComponent implements OnInit {
   // Event onclick submit
   saveBookingForm(): void {
     if (this.bookingForm.status === "INVALID") {
-      alert("Por favor, rellena los campos requeridos para contactar con el anunciante.");
+      swal("Oooops!", "Por favor, rellena los campos seleccionados", "error");
     } else {
 
-    console.log("Todo bien, FORMULARIO: ", this.bookingForm.value);
+      swal("Genial!", "Se ha enviado tu mensaje correctamente", "success");
+    // console.log("Todo bien, FORMULARIO: ", this.bookingForm.value);
 
     this.bookingForm.reset();
     // this.router.navigateByUrl("/home")

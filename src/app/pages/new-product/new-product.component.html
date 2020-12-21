@@ -1,0 +1,183 @@
+<div class="container d-flex mx-auto mb-5">
+  <app-user-area></app-user-area>
+  
+  <div class="mt-5 pt-5" style="width: 50vw;">
+    <h3>Nuevo producto</h3>
+    <p>Sube un nuevo producto para alquilar!</p>
+
+    <!-- **** NEW PRODUCT FORM SECTION **** -->
+    <form class="container p-4" autocomplete="off" [formGroup]="formNewpost" (ngSubmit)="saveNewpostForm()"> 
+      
+
+      <!-- Name of the product -->
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="name" 
+          name="name"
+          formControlName="name" 
+          [class.is-invalid]="productNameInvalid"
+        >
+        <small
+          *ngIf="productNameInvalid" 
+          class="form-text text-danger">
+              Indica el nombre del producto.
+         </small>
+      </div>
+  
+      <!-- Category of the product -->
+      <div class="form-group">
+        <label for="category">Categoría</label>
+        <select 
+          class="form-control" 
+          id="category"
+          name="category"
+          formControlName="category"
+          [class.is-invalid]="productCategoryInvalid"
+        >
+          <option>Deportes</option>
+          <option>Mobiliario</option>
+          <option>Ocio</option>
+          <option>Informática</option>
+          <option>Instrumentos</option>
+          <option>Sonido</option>
+          <option>Herramientas</option>
+          <option>Fotografía</option>
+        </select>
+        <small
+          *ngIf="productCategoryInvalid" 
+          class="form-text text-danger">
+              Indica la categoría del producto.
+         </small>
+      </div>
+  
+      <!-- State of the product -->
+      <div class="form-group">
+        <label for="validationCustom04">Estado</label>
+        <select 
+          class="custom-select" 
+          id="validationCustom04" 
+          required
+          name="status"
+          formControlName="status"
+          [class.is-invalid]="productStateInvalid"
+        >
+          <option selected disabled value="">Elige...</option>
+          <option>Nuevo</option>
+          <option>Usado</option>
+          <option>Muy usado</option>
+        </select>
+        <small
+          *ngIf="productStateInvalid" 
+          class="form-text text-danger">
+              Indica el estado del producto.
+         </small>
+      </div>
+  
+      <!-- Price of the product -->
+      <div class="form-group">
+        <label for="inputPrice" class="form-label">Precio por día</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="inputPrice"
+          name="price"
+          formControlName="price"
+          [class.is-invalid]="productPriceInvalid"
+        >
+        <small
+          *ngIf="productPriceInvalid" 
+          class="form-text text-danger">
+              Indica el precio del producto.
+         </small>
+      </div>
+  
+      <!-- Description of the product -->
+      <div class="form-group">
+        <label for="exampleTextarea">Descripción</label>
+        <textarea 
+          class="form-control" 
+          id="exampleTextarea" 
+          rows="5"
+          name="description"
+          formControlName="description"
+          [class.is-invalid]="productDescriptionInvalid"
+        ></textarea>
+        <small
+          *ngIf="productDescriptionInvalid" 
+          class="form-text text-danger">
+              Indica la descripción del producto.
+         </small>
+      </div>
+  
+      <!-- Upload images of the product -->
+      <div class="form-group">
+        <div class="custom-file">
+          <label for="inputImg" class="form-label">Imágenes</label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="inputImg"
+            placeholder="Introduce la URL de tu imágen"
+            name="pictures1"
+            formControlName="pictures1"
+            [class.is-invalid]="productImg1Invalid"
+          >
+          
+          <input 
+            type="text" 
+            class="form-control" 
+            id="inputImg"
+            placeholder="Introduce la URL de tu imágen"
+            name="pictures2"
+            formControlName="pictures2"
+            [class.is-invalid]="productImg2Invalid"
+          >
+          
+          <input 
+            type="text" 
+            class="form-control" 
+            id="inputImg"
+            placeholder="Introduce la URL de tu imágen"
+            name="pictures3"
+            formControlName="pictures3"
+            [class.is-invalid]="productImg3Invalid"
+          >
+          <small
+            *ngIf="productImg1Invalid" 
+            class="form-text text-danger">
+              Sube una imagen para tu producto.
+          </small>
+        </div>
+      </div>
+      
+      <!-- Datepicker availability of the product -->
+      <div class="form-group">
+        <label for="customRange2" class="form-label">¿Cuántos días alquilas tu producto?</label>
+        <input 
+          type="range" 
+          class="form-range" 
+          min="1" max="31" 
+          id="customRange2"  
+          value="15"
+          oninput="this.nextElementSibling.value = this.value"
+          name="bookingLength"
+          formControlName="bookingLength"
+          [class.is-invalid]="productRangeInvalid"  
+        >
+        <output>15</output>
+        <small
+            *ngIf="productRangeInvalid" 
+            class="form-text text-danger">
+              Indica cuántos días estará disponible tu producto
+          </small>
+      </div>
+  
+      <!-- Submit product button -->
+      <button type="submit" class="btn btn-block btn-info">Enviar</button>
+    </form>
+         
+  </div>
+</div>
